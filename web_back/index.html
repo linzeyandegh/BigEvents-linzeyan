@@ -149,6 +149,19 @@
             }
         })
        })
+       $.ajax({
+           type:'get',
+           url:'http://localhost:8000/admin/getuser ',
+           success:function(backData){
+               $('.user_info img').attr('src',backData.data.user_pic);
+               $('.user_info span').html('欢迎&nbsp;&nbsp;'+ backData.data.nickname);
+               $('.user_center_link img').attr('src',backData.data.user_pic)
+
+           }
+       })
+       // 页面更新
+       //   发送ajax请求,获取用户信息
+       //   将返回来的用户信息渲染到页面
    })
 
     </script>
